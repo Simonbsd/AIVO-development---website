@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — AIVO Development Limited</title>
+  <meta name="description" content="About AIVO Development Limited — a UK-based software company designing and developing high-quality digital applications for mobile and web platforms.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/favicon.svg" color="#111111">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Open Graph -->
+  <meta property="og:title" content="About — AIVO Development Limited">
+  <meta property="og:description" content="A UK-based software company designing and developing high-quality digital applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aivodevelopment.com/about.html">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      background-color: #f9fafb;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(0,0,0,0.03) 0%, transparent 60%),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 39px, rgba(0,0,0,0.02) 40px),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 39px, rgba(0,0,0,0.02) 40px);
+      background-attachment: fixed;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      animation: fadeIn 0.4s ease-out both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    main { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Page header ── */
+
+    .page-header { padding: 6rem 0 1rem; }
+
+    .page-header a {
+      font-size: 0.875rem;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .page-header a:hover,
+    .page-header a:focus-visible { color: #111; }
+
+    .page-header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #111;
+      margin-top: 2rem;
+    }
+
+    /* ── Sections ── */
+
+    .section {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .section h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.25rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #333;
+      max-width: 620px;
+    }
+
+    .section p + p { margin-top: 0.875rem; }
+
+    .section a {
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      background-image: linear-gradient(#111, #111);
+      background-size: 0% 1px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 0.25s ease;
+    }
+
+    .section a:hover,
+    .section a:focus-visible { background-size: 100% 1px; }
+
+    /* ── Company info ── */
+
+    .corp-info {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 0.5rem 2rem;
+      font-size: 0.9375rem;
+      margin-top: 0.25rem;
+    }
+
+    .corp-info dt { color: #999; font-weight: 400; }
+    .corp-info dd { color: #333; }
+
+    /* ── Footer ── */
+
+    footer {
+      background: #f2f3f5;
+      border-top: 1px solid rgba(0,0,0,0.07);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .footer-corp {
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-corp strong {
+      color: #111;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .footer-corp a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-corp a:hover { color: #111; }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
+      font-size: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav a {
+      color: #888;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav a:hover { color: #111; }
+
+    .footer-copy { font-size: 0.8125rem; color: #aaa; }
+
+    /* ── Focus ── */
+
+    a:focus-visible {
+      outline: 2px solid #111;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ── Responsive ── */
+
+    @media (min-width: 640px) {
+      .page-header { padding: 8rem 0 1rem; }
+      .page-header h1 { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <div class="page-header">
+      <a href="/">&larr; Home</a>
+      <h1>About AIVO Development Limited</h1>
+    </div>
+
+    <section class="section" aria-labelledby="overview">
+      <h2 id="overview">Company Overview</h2>
+      <p>AIVO Development Limited is a UK-registered software company incorporated in England and Wales. We design and develop digital software products across mobile and web platforms, with a particular focus on Apple ecosystem applications and modern web technologies.</p>
+      <p>Our team combines product design thinking with rigorous software engineering to build applications that work reliably, protect user data, and deliver genuine value to the people who use them.</p>
+    </section>
+
+    <section class="section" aria-labelledby="mission">
+      <h2 id="mission">Mission</h2>
+      <p>Our mission is to create software that works correctly, respects user privacy, and holds up to the highest standards of technical scrutiny. We do not pursue growth at the expense of quality, and we do not ship products until they meet our own rigorous internal standards.</p>
+      <p>We believe that thoughtful, well-engineered software creates lasting value — for users, for businesses, and for the broader technology ecosystem. That belief shapes every decision we make.</p>
+    </section>
+
+    <section class="section" aria-labelledby="technology">
+      <h2 id="technology">Technology Focus</h2>
+      <p>We develop natively across iOS, macOS, and the web, prioritising platform conventions and the expectations of each operating environment. Our Apple platform work adheres to Apple's Human Interface Guidelines and App Store Review Guidelines, with particular attention to privacy, security, and accessibility.</p>
+      <p>Our web technologies are chosen for longevity and performance. We favour clean, standards-compliant implementations over dependency-heavy frameworks, ensuring our products remain maintainable and fast.</p>
+    </section>
+
+    <section class="section" aria-labelledby="quality">
+      <h2 id="quality">Commitment to Quality</h2>
+      <p>Quality at AIVO means more than passing automated tests. It means thoughtful architecture, clean interfaces, careful attention to accessibility, and engineering practices that hold up under scrutiny from Apple App Review, enterprise procurement, and technical due diligence.</p>
+      <p>Every feature is considered from the perspective of the user who depends on it and the engineer who will maintain it. We document our systems, write tests with intent, and treat code review as a professional obligation rather than a formality.</p>
+      <p>We view our commitment to quality as a competitive advantage and a core part of our identity as a company.</p>
+    </section>
+
+    <section class="section" aria-labelledby="corporate">
+      <h2 id="corporate">Corporate Information</h2>
+      <dl class="corp-info">
+        <dt>Company</dt>
+        <dd>AIVO Development Limited</dd>
+        <dt>Jurisdiction</dt>
+        <dd>Registered in England and Wales</dd>
+        <dt>Contact</dt>
+        <dd><a href="mailto:hello@aivodevelopment.com">hello@aivodevelopment.com</a></dd>
+      </dl>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-corp">
+        <strong>AIVO Development Limited</strong>
+        Registered in England and Wales<br>
+        <a href="mailto:hello@aivodevelopment.com">hello@aivodevelopment.com</a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 AIVO Development Limited. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
