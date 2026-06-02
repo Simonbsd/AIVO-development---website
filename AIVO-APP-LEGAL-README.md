@@ -1,4 +1,4 @@
-# Hosting AIVOT's Privacy Policy & Terms on GitHub Pages
+# Hosting AIVO's Privacy Policy & Terms on GitHub Pages
 
 This folder contains [`privacy.html`](privacy.html) and [`terms.html`](terms.html). Follow these steps once and you'll have stable public URLs to plug into the iOS app and App Store Connect.
 
@@ -9,7 +9,7 @@ Open both `privacy.html` and `terms.html` and replace these strings everywhere t
 | Placeholder | What to put |
 |---|---|
 | `[CONTACT_EMAIL]` | A real support email you read (e.g. `support@yourdomain.com` or your personal email). |
-| `[COMPANY_OR_PERSON_NAME]` | The legal entity providing AIVOT — your registered company name, or your personal name if you're a sole developer. |
+| `[COMPANY_OR_PERSON_NAME]` | The legal entity providing AIVO — your registered company name, or your personal name if you're a sole developer. |
 | `[JURISDICTION]` | Where you live or your company is registered (e.g. "the State of Israel" or "England and Wales"). Used for governing-law clauses. |
 
 Search for `[` in each file to find them all (there are ~5 placeholder occurrences total).

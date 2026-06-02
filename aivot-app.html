@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIVOT — Train your voice, intentionally — AIVO Development Limited</title>
+  <meta name="description" content="AIVOT measures the six things that define how you come across — pitch, pacing, articulation, pauses, loudness, tonal balance — and builds a personal practice plan around them.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/favicon.svg" color="#111111">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Open Graph -->
+  <meta property="og:title" content="AIVOT — Train your voice, intentionally">
+  <meta property="og:description" content="Objective speech-delivery metrics, a weekly AI practice plan, and a coach in your pocket.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aivodevelopment.com/aivot-app.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AIVOT — Train your voice, intentionally">
+  <meta name="twitter:description" content="Objective speech-delivery metrics, a weekly AI practice plan, and a coach in your pocket.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent-green: #2ecc71;
+      --accent-green-soft: #eafaf1;
+      --accent-green-light: #f4fbf7;
+      --accent-green-border: #d4f5e3;
+      --top-section-tint: #f2f3f5;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      background-color: var(--accent-green-soft);
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(0,0,0,0.03) 0%, transparent 60%),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 39px, rgba(0,0,0,0.02) 40px),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 39px, rgba(0,0,0,0.02) 40px);
+      background-attachment: fixed;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      animation: fadeIn 0.4s ease-out both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    main { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Hero ── */
+
+    .hero { padding: 6rem 0 4rem; }
+
+    .top-section {
+      background-color: var(--top-section-tint);
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+    }
+
+    .top-section-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero .back {
+      font-size: 0.875rem;
+      color: var(--accent-green);
+      text-decoration: none;
+    }
+
+    .hero h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #111;
+      margin-top: 2rem;
+    }
+
+    .hero .tagline {
+      margin-top: 0.75rem;
+      font-size: 1.125rem;
+      color: #555;
+      font-weight: 400;
+      max-width: 560px;
+    }
+
+    .hero .cta-row {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: var(--accent-green);
+      color: #fff;
+      padding: 0.7rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .cta-primary:hover { opacity: 0.9; }
+
+    .cta-secondary {
+      font-size: 0.9375rem;
+      color: #555;
+    }
+
+    .hero .meta {
+      font-size: 0.875rem;
+      color: #888;
+      margin-top: 1.5rem;
+      padding-bottom: 2rem;
+    }
+
+    .hero .meta a {
+      font-size: 0.875rem;
+      color: var(--accent-green);
+    }
+
+    /* ── Sections ── */
+
+    .section {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .section h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--accent-green-border);
+      padding-bottom: 0.5rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #333;
+      max-width: 620px;
+    }
+
+    .section p + p { margin-top: 0.875rem; }
+
+    /* ── Feature grid ── */
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .feature {
+      padding: 1.25rem 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+    }
+
+    .feature:last-child { border-bottom: none; }
+
+    .feature h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.005em;
+    }
+
+    .feature p {
+      font-size: 0.9375rem;
+      color: #444;
+      margin: 0;
+    }
+
+    /* ── Metrics list ── */
+
+    .metrics {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 1.5rem;
+    }
+
+    .metrics li {
+      font-size: 0.9375rem;
+      color: #333;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .metrics li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+    }
+
+    /* ── Disclaimer ── */
+
+    .disclaimer {
+      font-size: 0.875rem;
+      color: #777;
+      max-width: 620px;
+    }
+
+    a {
+      color: var(--accent-green);
+      text-decoration: none;
+    }
+
+    a:hover { opacity: 0.8; }
+
+    /* ── Footer ── */
+
+    footer {
+      background: #f2f3f5;
+      border-top: 2px solid var(--accent-green-border);
+      margin-top: 1rem;
+    }
+
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .footer-corp {
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-corp strong {
+      color: #111;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .footer-corp a { color: var(--accent-green); }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
+      font-size: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav a {
+      color: var(--accent-green);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .footer-copy { font-size: 0.8125rem; color: #aaa; }
+
+    /* ── Focus ── */
+
+    a:focus-visible {
+      outline: 2px solid #111;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ── Responsive ── */
+
+    @media (min-width: 640px) {
+      .hero { padding: 8rem 0 5rem; }
+      .hero h1 { font-size: 2.25rem; }
+      .hero .tagline { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <div class="top-section">
+      <div class="top-section-inner">
+        <section class="hero" aria-label="Introduction">
+          <a href="/" class="back">&larr; AIVO Development</a>
+          <h1>AIVOT — train your voice, intentionally.</h1>
+          <p class="tagline">Most people have no idea how they actually sound. AIVOT measures it — and turns it into a practice plan you can act on.</p>
+          <div class="cta-row">
+            <a href="#" class="cta-primary" aria-label="Download AIVOT on the App Store">Download on the App Store</a>
+            <span class="cta-secondary">Free to start · iOS</span>
+          </div>
+          <p class="meta">
+            <a href="/aivot-app-support.html">Support</a> &nbsp;&middot;&nbsp;
+            <a href="/aivot-app-privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+            <a href="/aivot-app-terms.html">Terms</a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="what-is">
+      <h2 id="what-is">What AIVOT is</h2>
+      <p>AIVOT is a voice-training app for iOS. Record yourself speaking — in any context, any length — and AIVOT gives you objective, repeatable data on the six things that define how you come across:</p>
+      <ul class="metrics">
+        <li>Pitch variation</li>
+        <li>Pacing</li>
+        <li>Articulation</li>
+        <li>Pauses</li>
+        <li>Loudness</li>
+        <li>Tonal balance</li>
+      </ul>
+      <p>No vague impressions. Hard numbers, every session. Then a weekly practice plan adapted to where you've improved, where you've plateaued, and which metrics matter most for your goals.</p>
+    </section>
+
+    <section class="section" aria-labelledby="features">
+      <h2 id="features">How it works</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Separate tracks for every part of your life</h3>
+          <p>Your voice at work isn't the same goal as your voice on a date. Set up tracks for the situations that matter — leading a team, public speaking, interviews, dating, your partner — each with its own progress, daily session, and coaching.</p>
+        </div>
+        <div class="feature">
+          <h3>A weekly plan that adapts</h3>
+          <p>Every week AIVOT generates a daily practice plan sized to your schedule — 2, 5, or 10 minutes — and focuses on the metrics where you have the most room to grow.</p>
+        </div>
+        <div class="feature">
+          <h3>An AI coach you can talk to</h3>
+          <p>Ask the coach anything about your results. Why does high pitch variability matter for leadership presence? What's a quick drill for trailing off at the end of sentences? It explains, suggests, and answers follow-up questions — grounded in what's actually measurable about your voice.</p>
+        </div>
+        <div class="feature">
+          <h3>Analyze any recording</h3>
+          <p>Upload a file or paste a direct audio/video link. AIVOT analyzes it with the same precision as a live session — useful for reviewing presentations, interviews, or calls after the fact.</p>
+        </div>
+        <div class="feature">
+          <h3>Compare to a role model</h3>
+          <p>Upload a voice you want to move toward — a speaker you admire, a manager whose delivery commands attention. AIVOT maps the gap between their metrics and yours, and tracks how you close it over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="honest">
+      <h2 id="honest">Honest about what it measures</h2>
+      <p class="disclaimer">AIVOT coaches observable speech delivery — things a microphone can capture and a signal can quantify. It does not measure emotions, personality, or psychological states. Guidance is educational, not medical or therapeutic. AIVOT is not a substitute for professional coaching, speech therapy, or medical advice.</p>
+    </section>
+
+    <section class="section" aria-labelledby="pricing">
+      <h2 id="pricing">Pricing</h2>
+      <p>Free to start, with monthly limits on analyses and AI coach chat. AIVOT Premium unlocks unlimited analyses, full progress history, and role-model comparison, on monthly or annual plans. Cancel any time in your Apple subscription settings.</p>
+    </section>
+
+    <section class="section" aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p>Questions, feedback, or press: <a href="mailto:hello@aivodevelopment.com">hello@aivodevelopment.com</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-corp">
+        <strong>AIVO Development Limited &nbsp;&middot;&nbsp; Company Registration No: 17023009</strong>
+        Registered in England and Wales<br>
+        <a href="mailto:hello@aivodevelopment.com">hello@aivodevelopment.com</a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/aivot-app.html">AIVOT app</a>
+        <a href="/aivot-app-support.html">Support</a>
+        <a href="/aivot-app-privacy.html">Privacy Policy</a>
+        <a href="/aivot-app-terms.html">Terms of Use</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 AIVO Development Limited. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
